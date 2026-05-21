@@ -1,0 +1,89 @@
+{
+  "Name": "Team Potential",
+  "ImageUri": "",
+  "SurMemberList": [
+    {
+      "Name": "Man",
+      "Camp": "Sur",
+      "Characters": [
+        "Cheerleader",
+        "Entomologist",
+        "Enchantress"
+      ]
+    },
+    {
+      "Name": "Incandesce",
+      "Camp": "Sur",
+      "Characters": [
+        "Knight",
+        "Fire Investigator",
+        "Lanternist"
+      ]
+    },
+    {
+      "Name": "11",
+      "Camp": "Sur",
+      "Characters": [
+        "Mechanic",
+        "Embalmer",
+        "Antiquarian"
+      ]
+    },
+    {
+      "Name": "Alt",
+      "Camp": "Sur",
+      "Characters": [
+        "Mechanic",
+        "Mercenary",
+        "Gravekeeper"
+      ]
+    },
+    {
+      "Name": "Hunter",
+      "Camp": "Sur",
+      "Characters": [
+        "Psychologist",
+        "Faro Lady",
+        "Toy Merchant"
+      ]
+    },
+    {
+      "Name": "MamaDrew",
+      "Camp": "Sur",
+      "Characters": [
+        "Composer",
+        "Perfumer",
+        "Cheerleader"
+      ]
+    }
+  ],
+  "HunMemberList": [
+    {
+      "Name": "Fraud",
+      "Camp": "Hun",
+      "Characters": [
+        "Sculptor",
+        "Goatman",
+        "Axe Boy"
+      ]
+    },
+    {
+      "Name": "BonBonBot",
+      "Camp": "Hun",
+      "Characters": [
+        "Opera Singer",
+        "The Shadow",
+        "Hullabaloo"
+      ]
+    },
+    {
+      "Name": "Ajax",
+      "Camp": "Hun",
+      "Characters": [
+        "Cueist",
+        "Fool's Gold",
+        "Ripper"
+      ]
+    }
+  ]
+}

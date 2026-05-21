@@ -1,0 +1,80 @@
+{
+  "Name": "HunnyBunny",
+  "ImageUri": "",
+  "SurMemberList": [
+    {
+      "Name": "Corg",
+      "Camp": "Sur",
+      "Characters": [
+        "Entomologist",
+        "Novelist",
+        "Composer"
+      ]
+    },
+    {
+      "Name": "Sumire",
+      "Camp": "Sur",
+      "Characters": [
+        "Priestess",
+        "Journalist",
+        "Meteorologist"
+      ]
+    },
+    {
+      "Name": "Nootguy",
+      "Camp": "Sur",
+      "Characters": [
+        "Lucky Guy",
+        "Journalist",
+        "Escapologist"
+      ]
+    },
+    {
+      "Name": "Vale",
+      "Camp": "Sur",
+      "Characters": [
+        "Coordinator",
+        "Faro Lady",
+        "Painter"
+      ]
+    },
+    {
+      "Name": "Vird",
+      "Camp": "Sur",
+      "Characters": [
+        "Doctor",
+        "Postman",
+        "Cheerleader"
+      ]
+    },
+    {
+      "Name": "Teef",
+      "Camp": "Sur",
+      "Characters": [
+        "The Mind's Eye",
+        "Seer",
+        "Little Girl"
+      ]
+    }
+  ],
+  "HunMemberList": [
+    {
+      "Name": "SlippinYimmy",
+      "Camp": "Hun",
+      "Characters": [
+        "Dream Witch",
+        "Opera Singer",
+        "The Shadow"
+      ]
+    },
+    {
+      "Name": "KJ",
+      "Camp": "Hun",
+      "Characters": [
+        "Violinist",
+        "Opera Singer",
+        "Hullabaloo"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Starting Soon</title>
+<style>
+@font-face {
+  font-family: 'GcArbiter';
+  src: url('Da%20font%20used/GcArbiterDemoThin-0vnXG.ttf') format('truetype');
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'GcArbiter';
+  src: url('Da%20font%20used/GcArbiterDemoExtraLight-LV1ME.ttf') format('truetype');
+  font-weight: 200;
+}
+@font-face {
+  font-family: 'GcArbiter';
+  src: url('Da%20font%20used/GcArbiterDemoLight-XGmoZ.ttf') format('truetype');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'GcArbiter';
+  src: url('Da%20font%20used/GcArbiterDemoRegular-ov28o.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'GcArbiter';
+  src: url('Da%20font%20used/GcArbiterDemoMedium-gw1Vp.ttf') format('truetype');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'GcArbiter';
+  src: url('Da%20font%20used/GcArbiterDemoSemiBold-4n80W.ttf') format('truetype');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'GcArbiter';
+  src: url('Da%20font%20used/GcArbiterDemoBold-drEDx.ttf') format('truetype');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'GcArbiter';
+  src: url('Da%20font%20used/GcArbiterDemoExtraBold-PVYwZ.ttf') format('truetype');
+  font-weight: 800;
+}
+
+:root {
+  --bg: #E8DDEE;
+  --bg-soft: #F0E6F4;
+  --navy: #2B2C5E;
+  --navy-soft: #3D3F7A;
+  --ink: #1B1C3E;
+
+  --sur-1: #3A4D9C;
+  --sur-2: #5A8FE3;
+  --sur-3: #5BD4D8;
+  --sur-4: #8B7BD8;
+  --sur-5: #C29AE3;
+
+  --hun-1: #9B3F8E;
+  --hun-2: #C44A8C;
+  --hun-3: #E26FA8;
+  --hun-4: #F091B5;
+  --hun-5: #F5B0CC;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1920px;
+  height: 1080px;
+  background: var(--bg);
+  overflow: hidden;
+  font-family: 'GcArbiter', 'Segoe UI', Arial, sans-serif;
+  color: var(--ink);
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 18% 55%, rgba(155, 63, 142, 0.12) 0%, transparent 45%),
+    radial-gradient(ellipse at 82% 55%, rgba(58, 77, 156, 0.12) 0%, transparent 45%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.navy-band {
+  position: absolute;
+  left: 0; right: 0;
+  top: 56%;
+  height: 110px;
+  background: var(--navy);
+  z-index: 2;
+}
+
+.navy-band::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  top: 100%;
+  height: 80px;
+  background: rgba(155, 158, 200, 0.45);
+}
+
+.scene {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  z-index: 3;
+}
+
+.player-side {
+  width: 38%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.char-stage {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 420px;
+  height: 944px;
+  z-index: 2;
+  transition: transform 0.55s cubic-bezier(0.55, 0, 0.2, 1);
+  /* Parallelogram clip: free overflow up & left, hard clip at right edge
+     and along the slanted bottom edge (BL at 0,944 → BR at 420,869) */
+  clip-path: polygon(
+    -9999px -9999px,
+    420px   -9999px,
+    420px    810px,
+    0px      944px,
+    -9999px  2730px
+  );
+}
+
+.player-side.left  .char-stage.slid-out { transform: translateX(-50%) translateX(-200%); }
+.player-side.right .char-stage.slid-out { transform: translateX(-50%) translateX( 200%); }
+
+.char-stage::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/backdrop.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  z-index: 1;
+  filter: drop-shadow(0 12px 28px rgba(43, 44, 94, 0.35));
+}
+
+.char-img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: auto;
+  max-width: none;
+  z-index: 2;
+  transition: opacity 0.5s ease;
+  filter: drop-shadow(0 20px 40px rgba(43, 44, 94, 0.45));
+}
+
+#right-img { transform: translateX(-50%); }
+
+.camp-tag {
+  position: absolute;
+  top: 90px;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  transition: color 0.5s ease;
+}
+
+.player-side.left .camp-tag { left: 70px; }
+.player-side.right .camp-tag { right: 70px; flex-direction: row-reverse; }
+
+.camp-tag .arrows {
+  font-size: 18px;
+  letter-spacing: 2px;
+  opacity: 0.85;
+}
+
+.player-side.hun .camp-tag { color: var(--hun-1); }
+.player-side.sur .camp-tag { color: var(--sur-1); }
+
+.welcome-tag {
+  position: absolute;
+  top: 50px;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  color: var(--navy);
+  text-transform: uppercase;
+}
+
+.player-side.left .welcome-tag { left: 70px; }
+.player-side.right .welcome-tag { right: 70px; flex-direction: row-reverse; }
+
+.welcome-tag .stars { letter-spacing: 2px; color: var(--hun-2); }
+.player-side.sur .welcome-tag .stars { color: var(--sur-2); }
+
+.logos-vs-main {
+  display: flex;
+  align-items: center;
+  gap: 44px;
+  padding: 36px 52px 28px;
+}
+
+.logos-vs-sub {
+  display: flex;
+  align-items: center;
+  gap: 44px;
+  padding: 24px 52px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.player-slot {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 800;
+
+  letter-spacing: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: opacity 0.5s ease, color 0.5s ease;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+.player-slot.left  { color: var(--hun-3); }
+.player-slot.right { color: var(--sur-3); }
+
+.vs-spacer {
+  visibility: hidden;
+  font-size: 88px;
+  font-weight: 800;
+  letter-spacing: 6px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.vs-spacer::before { content: "VS"; }
+
+.char-name-label {
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 9px;
+  color: var(--navy);
+  margin-top: 14px;
+  opacity: 0.7;
+}
+
+.fade { opacity: 0; }
+
+.center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  gap: 28px;
+}
+
+.starting-label {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: 30px;
+  letter-spacing: 14px;
+  color: var(--navy);
+  text-transform: uppercase;
+  font-weight: 700;
+  opacity: 0.95;
+}
+
+.starting-label .dot {
+  width: 10px; height: 10px;
+  background: var(--hun-2);
+  border-radius: 50%;
+}
+
+.logos-vs {
+  display: flex;
+  flex-direction: column;
+  background: rgba(27, 28, 62, 0.82);
+  border: 1px solid rgba(43, 44, 94, 0.6);
+  border-radius: 4px;
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+  width: 780px;
+  flex-shrink: 0;
+}
+
+.team-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  flex: 1;
+  min-width: 0;
+}
+
+.logo-img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.35));
+}
+
+.logo-missing {
+  width: 140px;
+  height: 140px;
+  border: 2px dashed rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+}
+
+.vs {
+  font-size: 88px;
+  font-weight: 800;
+  letter-spacing: 6px;
+  background: linear-gradient(135deg, var(--hun-3) 0%, var(--sur-3) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.center-team-name {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.center-team-name.left { color: var(--hun-3); }
+.center-team-name.right { color: var(--sur-3); }
+
+.tag-row {
+  display: flex;
+  gap: 22px;
+  font-size: 12px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--navy);
+  opacity: 0.65;
+  font-weight: 500;
+}
+
+.tag-row .pip {
+  display: inline-block;
+  width: 8px; height: 8px;
+  background: var(--hun-3);
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.tag-row .pip.blue { background: var(--sur-3); }
+
+</style>
+</head>
+<body>
+<div class="navy-band"></div>
+<div class="scene">
+  <div class="player-side left" id="left-side">
+    <div class="char-stage">
+      <img class="char-img" id="left-img" src="" alt="">
+    </div>
+    <div class="welcome-tag"><span class="stars">&#9670;&#9670;&#9670;</span><span>Premier Tournament</span></div>
+  </div>
+
+  <div class="center">
+    <div class="starting-label"><span class="dot"></span><span>Starting Soon</span><span class="dot"></span></div>
+    <div class="logos-vs">
+      <div class="logos-vs-main">
+        <div class="team-block">
+          <div id="logo1-wrap"></div>
+          <div class="center-team-name left" id="c-name1"></div>
+        </div>
+        <div class="vs">VS</div>
+        <div class="team-block">
+          <div id="logo2-wrap"></div>
+          <div class="center-team-name right" id="c-name2"></div>
+        </div>
+      </div>
+      <div class="logos-vs-sub">
+        <div class="player-slot left" id="left-player"></div>
+        <div class="vs-spacer"></div>
+        <div class="player-slot right" id="right-player"></div>
+      </div>
+    </div>
+    <div class="tag-row">
+
+    </div>
+  </div>
+
+  <div class="player-side right" id="right-side">
+    <div class="char-stage">
+      <img class="char-img" id="right-img" src="" alt="">
+    </div>
+  </div>
+</div>
+
+<script>
+const charMap = {
+  "perfumer":          "surBig/Perfumer.png",
+  "painter":           "surBig/Painter.png",
+  "journalist":        "surBig/Journalist.png",
+  "entomologist":      "surBig/Entomologist.png",
+  "magician":          "surBig/Magician.png",
+  "forward":           "surBig/Forward.png",
+  "female dancer":     "surBig/Female Dancer.png",
+  "lucky guy":         "surBig/Lucky Guy.png",
+  "gardener":          "surBig/Gardener.png",
+  "patient":           "surBig/Patient.png",
+  "faro lady":         "surBig/Faro lady.png",
+  "fire investigator": "surBig/Fire investigator.png",
+  "professor":         "surBig/Professor.png",
+  "cheerleader":       "surBig/Cheerleader.png",
+  "puppeteer":         "surBig/Puppeteer.png",
+  "prisoner":          "surBig/Prisoner.png",
+  "seer":              "surBig/Seer.png",
+  "wildling":          "surBig/Wildling.png",
+  "acrobat":           "surBig/Acrobat.png",
+  "thief":             "surBig/Thief.png",
+  "aeroplanist":       "surBig/Aeroplanist.png",
+  "batter":            "surBig/Batter.png",
+  "prospector":        "surBig/Prospector.png",
+  "lawyer":            "surBig/Lawyer.png",
+  "cowboy":            "surBig/Cowboy.png",
+  "embalmer":          "surBig/Embalmer.png",
+  "little girl":       "surBig/Little girl.png",
+  "doctor":            "surBig/Doctor.png",
+  "enchantress":       "surBig/Enchantress.png",
+  "first officer":     "surBig/First Officer.png",
+  "archer":            "surBig/Archer.png",
+  "mechanic":          "surBig/Mechanic.png",
+  "coordinator":       "surBig/Coordinator.png",
+  "the mind's eye":    "surBig/The Mind's Eye.png",
+  "knight":            "surBig/Knight.png",
+  "grave keeper":      "surBig/Grave Keeper.png",
+  "novelist":          "surBig/Novelist.png",
+  "mercenary":         "surBig/Mercenary.png",
+  "composer":          "surBig/Composer.png",
+  "barmaid":           "surBig/Barmaid.png",
+  "antiquarian":       "surBig/Antiquarian.png",
+  "priestess":         "surBig/Priestess.png",
+  "weeping clown":     "surBig/Weeping Clown.png",
+  "explorer":          "surBig/Explorer.png",
+  "meteorologist":     "surBig/Meteorologist.png",
+  "toy merchant":      "surBig/Toy Merchant.png",
+  "psychologist":      "surBig/Psychologist.png",
+  "postman":           "surBig/Postman.png",
+  "escapologist":      "surBig/Escapologist.png",
+  "lanternist":        "surBig/Lanternist.png",
+  "guard 26":          "hunBig/Guard 26.png",
+  "axe boy":           "hunBig/Axe Boy.png",
+  "goatman":           "hunBig/Goatman.png",
+  "sculptor":          "hunBig/Sculptor.png",
+  "mad eyes":          "hunBig/Mad Eyes.png",
+  "geisha":            "hunBig/Geisha.png",
+  "the feaster":       "hunBig/The Feaster.png",
+  "the ripper":        "hunBig/The Ripper.png",
+  "gamekeeper":        "hunBig/Gamekeeper.png",
+  "evil reptilian":    "hunBig/Evil Reptilian.png",
+  "photographer":      "hunBig/Photographer.png",
+  "disciple":          "hunBig/Disciple.png",
+  "wu chang":          "hunBig/Wu Chang.png",
+  "violinist":         "hunBig/Violinist.png",
+  "hermit":            "hunBig/Hermit.png",
+  "naiad":             "hunBig/Naiad.png",
+  "undead":            "hunBig/Undead.png",
+  "hell ember":        "hunBig/Hell Ember.png",
+  "nightmare":         "hunBig/Nightmare.png",
+  "opera singer":      "hunBig/Opera Singer.png",
+  "bloody queen":      "hunBig/Bloody Queen.png",
+  "clerk":             "hunBig/Clerk.png",
+  "wax artist":        "hunBig/Wax Artist.png",
+  "dream witch":       "hunBig/Dream Witch.png",
+  "the breaking wheel":"hunBig/The Breaking Wheel.png",
+  "the shadow":        "hunBig/The Shadow.png",
+  "night watch":       "hunBig/Night Watch.png",
+  "smiley face":       "hunBig/Smiley Face.png",
+  "hullabaloo":        "hunBig/Hullabaloo.png",
+  "fool's gold":       "hunBig/Fool's Gold.png",
+  "soul weaver":       "hunBig/Soul Weaver.png",
+  "peddler":           "hunBig/Peddler.png",
+  "cueist":            "hunBig/Cueist.png",
+  "queen bee":         "hunBig/Queen Bee.png",
+};
+
+const charAliases = {
+  "gravekeeper":    "grave keeper",
+  "ripper":         "the ripper",
+  "feaster":        "the feaster",
+  "breaking wheel": "the breaking wheel",
+  "wheel":          "the breaking wheel",
+  "nightwatch":     "night watch",
+  "meterologist":   "meteorologist",
+};
+
+function getCharImage(name) {
+  const n = name.toLowerCase().trim();
+  return charMap[charAliases[n] || n] || null;
+}
+
+function prettyChar(name) {
+  const n = name.toLowerCase().trim();
+  return (charAliases[n] || n).replace(/\b\w/g, c => c.toUpperCase());
+}
+
+const ASSET_BUST = `?t=${Date.now()}`;
+
+function getLogoPath(name) {
+  if (!name) return null;
+  return "Teams/Logos/" + name + ".png";
+}
+
+let TEAMS = [];
+
+const TEAM_FILES = [
+  'BEE.json', 'BINGUS.json', 'Blood_Angels.json', 'CPTSD.json',
+  'Fat_Chuds.json', 'FIORE.json', 'First_Love.json', 'Golden_Graves.json',
+  'GoLoko.json', 'GSL.json', 'Heaven.json', 'Hot_Mess_Express.json',
+  'HunnyBunny.json', 'Luminescence.json', 'Orion_Vortex.json', 'Rebel.json',
+  'Rebellion.json', 'Rui_Potato.json', 'Sagittarius.json', 'Sigil.json',
+  'Soft_Boiled.json', 'Team_Potential.json', 'The_Family.json', 'Tsunami.json'
+];
+
+async function loadTeams() {
+  const bust = `?t=${Date.now()}`;
+  const results = await Promise.all(
+    TEAM_FILES.map(f =>
+      fetch(`Teams/${f}${bust}`)
+        .then(r => r.ok ? r.json() : null)
+        .catch(() => null)
+    )
+  );
+  return results.filter(Boolean);
+}
+
+function findTeam(name) {
+  if (!name) return null;
+  return TEAMS.find(t => t.Name.toLowerCase() === name.toLowerCase()) || null;
+}
+
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function padCampList(list, target) {
+  if (!list.length) return [];
+  const out = shuffle(list);
+  while (out.length < target) {
+    const next = shuffle(list);
+    if (next.length > 1 && next[0] === out[out.length - 1]) {
+      [next[0], next[1]] = [next[1], next[0]];
+    }
+    for (const m of next) {
+      if (out.length >= target) break;
+      out.push(m);
+    }
+  }
+  return out;
+}
+
+function buildCampPairs(list1, list2, camp) {
+  if (!list1.length || !list2.length) return [];
+  const n = Math.max(list1.length, list2.length);
+  const a = padCampList(list1, n);
+  const b = padCampList(list2, n);
+  const pairs = [];
+  for (let i = 0; i < n; i++) pairs.push({ camp, p1: a[i], p2: b[i] });
+  return pairs;
+}
+
+function buildRound(t1, t2) {
+  const sur = buildCampPairs(t1.SurMemberList || [], t2.SurMemberList || [], "sur");
+  const hun = buildCampPairs(t1.HunMemberList || [], t2.HunMemberList || [], "hun");
+  return shuffle([...sur, ...hun]);
+}
+
+const charIndex = new Map();
+function pickChar(player) {
+  const chars = player.Characters || [];
+  if (!chars.length) return null;
+  const key = player.Name;
+  let i = charIndex.get(key);
+  if (i === undefined) i = Math.floor(Math.random() * chars.length);
+  else i = (i + 1) % chars.length;
+  charIndex.set(key, i);
+  return chars[i];
+}
+
+loadTeams().then(loaded => {
+  TEAMS = loaded;
+
+  const params = new URLSearchParams(location.search);
+  const team1 = findTeam(params.get("team1"));
+  const team2 = findTeam(params.get("team2"));
+
+  if (!team1 || !team2) {
+  document.body.style.cssText = "display:flex;align-items:center;justify-content:center;background:#E8DDEE;color:#1B1C3E;font-family:'GcArbiter',sans-serif;width:100vw;height:100vh;flex-direction:column;gap:16px";
+  document.body.innerHTML = `
+    <div style="font-size:28px;letter-spacing:6px;color:#2B2C5E;font-weight:700">TEAMS NOT FOUND</div>
+    <div style="font-size:14px;color:#3D3F7A;letter-spacing:3px">Use: ?team1=GoLoko&amp;team2=BEE</div>
+    <div style="font-size:12px;color:#3D3F7A;max-width:800px;text-align:center;line-height:2;letter-spacing:1px">
+      Available: ${TEAMS.map(t => t.Name).join(" &bull; ")}
+    </div>`;
+} else {
+  document.getElementById("c-name1").textContent = team1.Name;
+  document.getElementById("c-name2").textContent = team2.Name;
+
+  const logo1 = getLogoPath(team1.Name);
+  const logo2 = getLogoPath(team2.Name);
+
+  function makeLogo(path, wrap) {
+    if (path) {
+      const img = document.createElement("img");
+      img.className = "logo-img";
+      img.src = path;
+      wrap.appendChild(img);
+    } else {
+      const div = document.createElement("div");
+      div.className = "logo-missing";
+      wrap.appendChild(div);
+    }
+  }
+  makeLogo(logo1, document.getElementById("logo1-wrap"));
+  makeLogo(logo2, document.getElementById("logo2-wrap"));
+
+  let round = buildRound(team1, team2);
+  if (!round.length) {
+    document.getElementById("left-player").textContent = "No matching camp";
+  } else {
+    let idx = 0;
+    const INTERVAL = 10000;
+
+    const leftSide   = document.getElementById("left-side");
+    const rightSide  = document.getElementById("right-side");
+    const leftImg    = document.getElementById("left-img");
+    const rightImg   = document.getElementById("right-img");
+    const leftStage  = leftSide.querySelector(".char-stage");
+    const rightStage = rightSide.querySelector(".char-stage");
+    const leftPlayer = document.getElementById("left-player");
+    const rightPlayer= document.getElementById("right-player");
+
+    function applyPair(pair) {
+      const c1 = pickChar(pair.p1);
+      const c2 = pickChar(pair.p2);
+      const img1 = getCharImage(c1);
+      const img2 = getCharImage(c2);
+
+      leftSide.classList.remove("sur", "hun");
+      rightSide.classList.remove("sur", "hun");
+      leftSide.classList.add(pair.camp);
+      rightSide.classList.add(pair.camp);
+
+      leftPlayer.textContent  = pair.p1.Name;
+      rightPlayer.textContent = pair.p2.Name;
+
+      if (img1) leftImg.src  = img1;
+      if (img2) rightImg.src = img2;
+    }
+
+    function next() {
+      leftStage.classList.add("slid-out");
+      rightStage.classList.add("slid-out");
+      leftPlayer.classList.add("fade");
+      rightPlayer.classList.add("fade");
+      setTimeout(() => {
+        idx++;
+        if (idx >= round.length) {
+          round = buildRound(team1, team2);
+          idx = 0;
+        }
+        applyPair(round[idx]);
+        leftStage.classList.remove("slid-out");
+        rightStage.classList.remove("slid-out");
+        leftPlayer.classList.remove("fade");
+        rightPlayer.classList.remove("fade");
+      }, 550);
+    }
+
+    applyPair(round[0]);
+    setInterval(next, INTERVAL);
+  }
+  }
+});
+</script>
+</body>
+</html>

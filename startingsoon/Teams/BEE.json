@@ -1,0 +1,71 @@
+{
+  "Name": "BEE",
+  "ImageUri": "",
+  "SurMemberList": [
+    {
+      "Name": "Rapid",
+      "Camp": "Sur",
+      "Characters": [
+        "Professor",
+        "The Mind's Eye",
+        "Faro Lady"
+      ]
+    },
+    {
+      "Name": "Karamell",
+      "Camp": "Sur",
+      "Characters": [
+        "Little Girl",
+        "Archer",
+        "Lanternist"
+      ]
+    },
+    {
+      "Name": "Tiv",
+      "Camp": "Sur",
+      "Characters": [
+        "Prospector",
+        "Professor",
+        "Enchantress"
+      ]
+    },
+    {
+      "Name": "Carmen",
+      "Camp": "Sur",
+      "Characters": [
+        "Lanternist",
+        "Cheerleader",
+        "Journalist"
+      ]
+    },
+    {
+      "Name": "Bear",
+      "Camp": "Sur",
+      "Characters": [
+        "First Officer",
+        "Gravekeeper",
+        "Mercenary"
+      ]
+    },
+    {
+      "Name": "Venomous",
+      "Camp": "Sur",
+      "Characters": [
+        "Archer",
+        "Gravekeeper",
+        "Psychologist"
+      ]
+    }
+  ],
+  "HunMemberList": [
+    {
+      "Name": "Stiris",
+      "Camp": "Hun",
+      "Characters": [
+        "Axe Boy",
+        "Queen Bee",
+        "Opera Singer"
+      ]
+    }
+  ]
+}

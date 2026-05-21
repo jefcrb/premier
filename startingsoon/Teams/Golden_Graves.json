@@ -1,0 +1,71 @@
+{
+  "Name": "Golden Graves",
+  "ImageUri": "",
+  "SurMemberList": [
+    {
+      "Name": "BatataFlop",
+      "Camp": "Sur",
+      "Characters": [
+        "Doctor",
+        "First Officer",
+        "Embalmer"
+      ]
+    },
+    {
+      "Name": "M1ssClick",
+      "Camp": "Sur",
+      "Characters": [
+        "Meterologist",
+        "Coordinator",
+        "Lawyer"
+      ]
+    },
+    {
+      "Name": "Sasu",
+      "Camp": "Sur",
+      "Characters": [
+        "Enchantress",
+        "Perfumer",
+        "Mechanic"
+      ]
+    },
+    {
+      "Name": "Yuniko",
+      "Camp": "Sur",
+      "Characters": [
+        "Cheerleader",
+        "Entomologist",
+        "Toy Merchant"
+      ]
+    },
+    {
+      "Name": "Lucca",
+      "Camp": "Sur",
+      "Characters": [
+        "Prisoner",
+        "Doctor",
+        "Barmaid"
+      ]
+    }
+  ],
+  "HunMemberList": [
+    {
+      "Name": "TK",
+      "Camp": "Hun",
+      "Characters": [
+        "Geisha",
+        "Nightwatch",
+        "Disciple"
+      ]
+    },
+    {
+      "Name": "Dog",
+      "Camp": "Hun",
+      "Characters": [
+        "Evil Reptilian",
+        "Cueist",
+        "Smiley Face"
+      ]
+    }
+  ]
+}

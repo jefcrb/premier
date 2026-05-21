@@ -1,0 +1,53 @@
+{
+  "Name": "First Love",
+  "ImageUri": "",
+  "SurMemberList": [
+    {
+      "Name": "Spicy",
+      "Camp": "Sur",
+      "Characters": [
+        "Archer",
+        "Antiquarian",
+        "Mechanic"
+      ]
+    },
+    {
+      "Name": "Sweet",
+      "Camp": "Sur",
+      "Characters": [
+        "Composer",
+        "Lucky Guy",
+        "Prospector"
+      ]
+    },
+    {
+      "Name": "Florescent",
+      "Camp": "Sur",
+      "Characters": [
+        "Forward",
+        "Puppeteer",
+        "Aeroplanist"
+      ]
+    },
+    {
+      "Name": "Breeze",
+      "Camp": "Sur",
+      "Characters": [
+        "First Officer",
+        "Gravekeeper",
+        "Mercenary"
+      ]
+    }
+  ],
+  "HunMemberList": [
+    {
+      "Name": "Said",
+      "Camp": "Hun",
+      "Characters": [
+        "Goatman",
+        "Hullabaloo",
+        "Opera Singer"
+      ]
+    }
+  ]
+}

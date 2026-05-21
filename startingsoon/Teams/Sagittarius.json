@@ -1,0 +1,89 @@
+{
+  "Name": "Sagittarius",
+  "ImageUri": "",
+  "SurMemberList": [
+    {
+      "Name": "Cebby",
+      "Camp": "Sur",
+      "Characters": [
+        "Fire Investigator",
+        "Matador",
+        "Doctor"
+      ]
+    },
+    {
+      "Name": "Kade",
+      "Camp": "Sur",
+      "Characters": [
+        "Puppeteer",
+        "Archer",
+        "Cheerleader"
+      ]
+    },
+    {
+      "Name": "Cam",
+      "Camp": "Sur",
+      "Characters": [
+        "Mechanic",
+        "Faro Lady",
+        "Lanternist"
+      ]
+    },
+    {
+      "Name": "Peachy",
+      "Camp": "Sur",
+      "Characters": [
+        "Meteorologist",
+        "Knight",
+        "Mechanic"
+      ]
+    },
+    {
+      "Name": "Marvy",
+      "Camp": "Sur",
+      "Characters": [
+        "Seer",
+        "Matador",
+        "Prisoner"
+      ]
+    },
+    {
+      "Name": "Cloud",
+      "Camp": "Sur",
+      "Characters": [
+        "Prospector",
+        "Forward",
+        "Mercenary"
+      ]
+    }
+  ],
+  "HunMemberList": [
+    {
+      "Name": "Mori",
+      "Camp": "Hun",
+      "Characters": [
+        "Dream Witch",
+        "Bloody Queen",
+        "Queen Bee"
+      ]
+    },
+    {
+      "Name": "paperwings",
+      "Camp": "Hun",
+      "Characters": [
+        "Goatman",
+        "Disciple",
+        "Evil Reptilian"
+      ]
+    },
+    {
+      "Name": "Grease",
+      "Camp": "Hun",
+      "Characters": [
+        "Undead",
+        "Hullabaloo",
+        "Wheel"
+      ]
+    }
+  ]
+}

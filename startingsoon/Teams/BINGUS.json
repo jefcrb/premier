@@ -1,0 +1,71 @@
+{
+  "Name": "BINGUS",
+  "ImageUri": "",
+  "SurMemberList": [
+    {
+      "Name": "JustBetter",
+      "Camp": "Sur",
+      "Characters": [
+        "Cowboy",
+        "Archer",
+        "Antiquarian"
+      ]
+    },
+    {
+      "Name": "Eve",
+      "Camp": "Sur",
+      "Characters": [
+        "The Mind's Eye",
+        "Lanternist",
+        "Aeroplanist"
+      ]
+    },
+    {
+      "Name": "Infamous",
+      "Camp": "Sur",
+      "Characters": [
+        "Forward",
+        "Acrobat",
+        "Professor"
+      ]
+    },
+    {
+      "Name": "Ghostly",
+      "Camp": "Sur",
+      "Characters": [
+        "Gravekeeper",
+        "First Officer",
+        "Postman"
+      ]
+    },
+    {
+      "Name": "iEatFood",
+      "Camp": "Sur",
+      "Characters": [
+        "Lucky Guy",
+        "Little Girl",
+        "Lawyer"
+      ]
+    },
+    {
+      "Name": "rae",
+      "Camp": "Sur",
+      "Characters": [
+        "Journalist",
+        "Entomologist",
+        "Prospector"
+      ]
+    }
+  ],
+  "HunMemberList": [
+    {
+      "Name": "fafart",
+      "Camp": "Hun",
+      "Characters": [
+        "Disciple",
+        "Soul Weaver",
+        "Ripper"
+      ]
+    }
+  ]
+}

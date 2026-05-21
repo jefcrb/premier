@@ -1,0 +1,89 @@
+{
+  "Name": "Blood Angels",
+  "ImageUri": "",
+  "SurMemberList": [
+    {
+      "Name": "Siegfried",
+      "Camp": "Sur",
+      "Characters": [
+        "Knight",
+        "Forward",
+        "Patient"
+      ]
+    },
+    {
+      "Name": "Yume",
+      "Camp": "Sur",
+      "Characters": [
+        "Gravekeeper",
+        "Enchantress",
+        "Lanternist"
+      ]
+    },
+    {
+      "Name": "Tim",
+      "Camp": "Sur",
+      "Characters": [
+        "Mechanic",
+        "Doctor",
+        "Lucky Guy"
+      ]
+    },
+    {
+      "Name": "Avalama",
+      "Camp": "Sur",
+      "Characters": [
+        "Seer",
+        "Magician",
+        "Archer"
+      ]
+    },
+    {
+      "Name": "Runo",
+      "Camp": "Sur",
+      "Characters": [
+        "Forward",
+        "Archer",
+        "Magician"
+      ]
+    },
+    {
+      "Name": "Ace",
+      "Camp": "Sur",
+      "Characters": [
+        "Cheerleader",
+        "Seer",
+        "Faro Lady"
+      ]
+    }
+  ],
+  "HunMemberList": [
+    {
+      "Name": "Sun",
+      "Camp": "Hun",
+      "Characters": [
+        "Breaking Wheel",
+        "Goatman",
+        "Undead"
+      ]
+    },
+    {
+      "Name": "Roachie",
+      "Camp": "Hun",
+      "Characters": [
+        "Goatman",
+        "Dream Witch",
+        "Opera Singer"
+      ]
+    },
+    {
+      "Name": "J",
+      "Camp": "Hun",
+      "Characters": [
+        "Geisha",
+        "Dream Witch",
+        "Opera Singer"
+      ]
+    }
+  ]
+}

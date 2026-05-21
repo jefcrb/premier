@@ -1,0 +1,80 @@
+{
+  "Name": "Rebellion",
+  "ImageUri": null,
+  "SurMemberList": [
+    {
+      "Name": "Lolly",
+      "Camp": "Sur",
+      "Characters": [
+        "Lanternist",
+        "Gravekeeper",
+        "Perfumer"
+      ]
+    },
+    {
+      "Name": "Riyo",
+      "Camp": "Sur",
+      "Characters": [
+        "First Officer",
+        "Novelist",
+        "Archer"
+      ]
+    },
+    {
+      "Name": "Winter",
+      "Camp": "Sur",
+      "Characters": [
+        "Psychologist",
+        "Lanternist",
+        "Priestess"
+      ]
+    },
+    {
+      "Name": "Ray",
+      "Camp": "Sur",
+      "Characters": [
+        "Barmaid",
+        "Acrobat",
+        "Entomologist"
+      ]
+    },
+    {
+      "Name": "mh6350",
+      "Camp": "Sur",
+      "Characters": [
+        "Coordinator",
+        "Cheerleader",
+        "Doctor"
+      ]
+    },
+    {
+      "Name": "PlayForFun",
+      "Camp": "Sur",
+      "Characters": [
+        "Forward",
+        "Aeroplanist",
+        "Mercenary"
+      ]
+    }
+  ],
+  "HunMemberList": [
+    {
+      "Name": "Mae",
+      "Camp": "Hun",
+      "Characters": [
+        "Geisha",
+        "Bloody Queen",
+        "Naiad"
+      ]
+    },
+    {
+      "Name": "Kiru",
+      "Camp": "Hun",
+      "Characters": [
+        "Peddler",
+        "Disciple",
+        "Hullabaloo"
+      ]
+    }
+  ]
+}

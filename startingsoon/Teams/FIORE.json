@@ -1,0 +1,89 @@
+{
+  "Name": "FIORE",
+  "ImageUri": "",
+  "SurMemberList": [
+    {
+      "Name": "Lia",
+      "Camp": "Sur",
+      "Characters": [
+        "Embalmer",
+        "Seer",
+        "Barmaid"
+      ]
+    },
+    {
+      "Name": "Mysti",
+      "Camp": "Sur",
+      "Characters": [
+        "Matador",
+        "Meteorologist",
+        "Aeroplanist"
+      ]
+    },
+    {
+      "Name": "Nineteen",
+      "Camp": "Sur",
+      "Characters": [
+        "Cheerleader",
+        "Antiquarian",
+        "Entomologist"
+      ]
+    },
+    {
+      "Name": "Solitz",
+      "Camp": "Sur",
+      "Characters": [
+        "Prisoner",
+        "Novelist",
+        "Archer"
+      ]
+    },
+    {
+      "Name": "Jen",
+      "Camp": "Sur",
+      "Characters": [
+        "Puppeteer",
+        "Acrobat",
+        "Perfumer"
+      ]
+    },
+    {
+      "Name": "Aki",
+      "Camp": "Sur",
+      "Characters": [
+        "Gravekeeper",
+        "Magician",
+        "Prisoner"
+      ]
+    }
+  ],
+  "HunMemberList": [
+    {
+      "Name": "Mable",
+      "Camp": "Hun",
+      "Characters": [
+        "Night Watch",
+        "Axe Boy",
+        "Photographer"
+      ]
+    },
+    {
+      "Name": "Midori",
+      "Camp": "Hun",
+      "Characters": [
+        "Disciple",
+        "Dream Witch",
+        "The Shadow"
+      ]
+    },
+    {
+      "Name": "Sheriff",
+      "Camp": "Hun",
+      "Characters": [
+        "Undead",
+        "Nightmare",
+        "Smiley Face"
+      ]
+    }
+  ]
+}

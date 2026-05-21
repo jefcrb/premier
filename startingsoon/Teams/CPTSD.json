@@ -1,0 +1,80 @@
+{
+  "Name": "CPTSD",
+  "ImageUri": "",
+  "SurMemberList": [
+    {
+      "Name": "Jackie",
+      "Camp": "Sur",
+      "Characters": [
+        "Coordinator",
+        "Doctor",
+        "Prospector"
+      ]
+    },
+    {
+      "Name": "Odius",
+      "Camp": "Sur",
+      "Characters": [
+        "Journalist",
+        "Prisoner",
+        "Gravekeeper"
+      ]
+    },
+    {
+      "Name": "Raven",
+      "Camp": "Sur",
+      "Characters": [
+        "Cowboy",
+        "Puppeteer",
+        "Aeroplanist"
+      ]
+    },
+    {
+      "Name": "Dalia",
+      "Camp": "Sur",
+      "Characters": [
+        "Antiquarian",
+        "Female Dancer",
+        "Meteorologist"
+      ]
+    },
+    {
+      "Name": "Robert",
+      "Camp": "Sur",
+      "Characters": [
+        "Mechanic",
+        "Doctor",
+        "Escapologist"
+      ]
+    },
+    {
+      "Name": "Allysia",
+      "Camp": "Sur",
+      "Characters": [
+        "First Officer",
+        "Priestess",
+        "Knight"
+      ]
+    }
+  ],
+  "HunMemberList": [
+    {
+      "Name": "Oscar",
+      "Camp": "Hun",
+      "Characters": [
+        "Hullabaloo",
+        "Opera Singer",
+        "Hermit"
+      ]
+    },
+    {
+      "Name": "Quinn",
+      "Camp": "Hun",
+      "Characters": [
+        "Evil Reptilian",
+        "Goatman",
+        "Hullabaloo"
+      ]
+    }
+  ]
+}

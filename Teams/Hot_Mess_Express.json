@@ -1,0 +1,71 @@
+{
+  "Name": "Hot Mess Express",
+  "ImageUri": "",
+  "SurMemberList": [
+    {
+      "Name": "Oldgen",
+      "Camp": "Sur",
+      "Characters": [
+        "Antiquarian",
+        "Lanternist",
+        "Priestess"
+      ]
+    },
+    {
+      "Name": "Tate",
+      "Camp": "Sur",
+      "Characters": [
+        "First Officer",
+        "Acrobat",
+        "Prospector"
+      ]
+    },
+    {
+      "Name": "Magix",
+      "Camp": "Sur",
+      "Characters": [
+        "Psychologist",
+        "Gardener",
+        "Lanternist"
+      ]
+    },
+    {
+      "Name": "Dan Heng",
+      "Camp": "Sur",
+      "Characters": [
+        "Entomologist",
+        "Female Dancer",
+        "Little Girl"
+      ]
+    },
+    {
+      "Name": "Misaki",
+      "Camp": "Sur",
+      "Characters": [
+        "Archer",
+        "Faro Lady",
+        "Meteorologist"
+      ]
+    }
+  ],
+  "HunMemberList": [
+    {
+      "Name": "Newgen",
+      "Camp": "Hun",
+      "Characters": [
+        "Clerk",
+        "Cueist",
+        "The Shadow"
+      ]
+    },
+    {
+      "Name": "Pipi",
+      "Camp": "Hun",
+      "Characters": [
+        "Undead",
+        "Wax Artist",
+        "Ripper"
+      ]
+    }
+  ]
+}

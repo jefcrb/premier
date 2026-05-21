@@ -1,0 +1,80 @@
+{
+  "Name": "Luminescence",
+  "ImageUri": "",
+  "SurMemberList": [
+    {
+      "Name": "Corpsie_Weisz",
+      "Camp": "Sur",
+      "Characters": [
+        "Escapologist",
+        "Prospector",
+        "First Officer"
+      ]
+    },
+    {
+      "Name": "Sophie",
+      "Camp": "Sur",
+      "Characters": [
+        "Gravekeeper",
+        "Aeroplanist",
+        "Magician"
+      ]
+    },
+    {
+      "Name": "Baene",
+      "Camp": "Sur",
+      "Characters": [
+        "Archer",
+        "Prisoner",
+        "Seer"
+      ]
+    },
+    {
+      "Name": "Ali",
+      "Camp": "Sur",
+      "Characters": [
+        "Cowboy",
+        "Forward",
+        "Knight"
+      ]
+    },
+    {
+      "Name": "Cloudy",
+      "Camp": "Sur",
+      "Characters": [
+        "Novelist",
+        "Seer",
+        "Enchantress"
+      ]
+    },
+    {
+      "Name": "Dakota",
+      "Camp": "Sur",
+      "Characters": [
+        "Toy Merchant",
+        "Antiquarian",
+        "Journalist"
+      ]
+    }
+  ],
+  "HunMemberList": [
+    {
+      "Name": "Xunyi",
+      "Camp": "Hun",
+      "Characters": [
+        "Ripper",
+        "Cueist",
+        "Opera Singer"
+      ]
+    },
+    {
+      "Name": "Moate",
+      "Camp": "Hun",
+      "Characters": [
+        "Goatman",
+        "The Shadow",
+        "Opera Singer"
+      ]
+    }
+  ]
+}

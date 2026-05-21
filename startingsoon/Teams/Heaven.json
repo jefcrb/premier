@@ -1,0 +1,89 @@
+{
+  "Name": "Heaven",
+  "ImageUri": null,
+  "SurMemberList": [
+    {
+      "Name": "Blue",
+      "Camp": "Sur",
+      "Characters": [
+        "Magician",
+        "Lawyer",
+        "Fire Investigator"
+      ]
+    },
+    {
+      "Name": "Dark",
+      "Camp": "Sur",
+      "Characters": [
+        "Seer",
+        "Antiquarian",
+        "Lanternist"
+      ]
+    },
+    {
+      "Name": "FeverLuvsYuri",
+      "Camp": "Sur",
+      "Characters": [
+        "Toy Merchant",
+        "Journalist",
+        "Postman"
+      ]
+    },
+    {
+      "Name": "Demigod",
+      "Camp": "Sur",
+      "Characters": [
+        "Prisoner",
+        "Enchantress",
+        "Perfumer"
+      ]
+    },
+    {
+      "Name": "Dodo",
+      "Camp": "Sur",
+      "Characters": [
+        "Cowboy",
+        "Thief",
+        "Cheerleader"
+      ]
+    },
+    {
+      "Name": "Maddy",
+      "Camp": "Sur",
+      "Characters": [
+        "Patient",
+        "Forward",
+        "Mechanic"
+      ]
+    },
+    {
+      "Name": "Verge",
+      "Camp": "Sur",
+      "Characters": [
+        "Painter",
+        "Little Girl",
+        "The Mind's Eye"
+      ]
+    }
+  ],
+  "HunMemberList": [
+    {
+      "Name": "Eight",
+      "Camp": "Hun",
+      "Characters": [
+        "Wu Chang",
+        "Evil Reptilian",
+        "Soul Weaver"
+      ]
+    },
+    {
+      "Name": "K",
+      "Camp": "Hun",
+      "Characters": [
+        "Goatman",
+        "Ripper",
+        "Geisha"
+      ]
+    }
+  ]
+}

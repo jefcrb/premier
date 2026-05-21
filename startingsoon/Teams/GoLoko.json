@@ -1,0 +1,71 @@
+{
+  "Name": "GoLoko",
+  "ImageUri": "",
+  "SurMemberList": [
+    {
+      "Name": "CCD",
+      "Camp": "Sur",
+      "Characters": [
+        "Forward",
+        "Aeroplanist",
+        "Mercenary"
+      ]
+    },
+    {
+      "Name": "Agramont",
+      "Camp": "Sur",
+      "Characters": [
+        "Cheerleader",
+        "Mechanic",
+        "Toy Merchant"
+      ]
+    },
+    {
+      "Name": "Hiyori",
+      "Camp": "Sur",
+      "Characters": [
+        "Antiquarian",
+        "Mechanic",
+        "Archer"
+      ]
+    },
+    {
+      "Name": "Jimbe",
+      "Camp": "Sur",
+      "Characters": [
+        "Aeroplanist",
+        "First Officer",
+        "Knight"
+      ]
+    },
+    {
+      "Name": "Weon",
+      "Camp": "Sur",
+      "Characters": [
+        "Cowboy",
+        "Lawyer",
+        "Acrobat"
+      ]
+    }
+  ],
+  "HunMemberList": [
+    {
+      "Name": "Yuko",
+      "Camp": "Hun",
+      "Characters": [
+        "Sculptor",
+        "Geisha",
+        "Mad Eyes"
+      ]
+    },
+    {
+      "Name": "UKJ",
+      "Camp": "Hun",
+      "Characters": [
+        "The Shadow",
+        "Wax Artist",
+        "Goatman"
+      ]
+    }
+  ]
+}

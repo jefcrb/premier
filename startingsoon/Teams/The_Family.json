@@ -1,0 +1,62 @@
+{
+  "Name": "The Family",
+  "ImageUri": "",
+  "SurMemberList": [
+    {
+      "Name": "Eli",
+      "Camp": "Sur",
+      "Characters": [
+        "Doctor",
+        "Lanternist",
+        "Cheerleader"
+      ]
+    },
+    {
+      "Name": "Wukong",
+      "Camp": "Sur",
+      "Characters": [
+        "Lawyer",
+        "Antiquarian",
+        "Gardener"
+      ]
+    },
+    {
+      "Name": "Ronny",
+      "Camp": "Sur",
+      "Characters": [
+        "Archer",
+        "Batter",
+        "Prisoner"
+      ]
+    },
+    {
+      "Name": "Aki",
+      "Camp": "Sur",
+      "Characters": [
+        "Coordinator",
+        "Escapologist",
+        "Postman"
+      ]
+    }
+  ],
+  "HunMemberList": [
+    {
+      "Name": "Chinox",
+      "Camp": "Hun",
+      "Characters": [
+        "Smiley Face",
+        "Hell Ember",
+        "The Shadow"
+      ]
+    },
+    {
+      "Name": "Voldigard",
+      "Camp": "Hun",
+      "Characters": [
+        "Opera Singer",
+        "Wax Artist",
+        "Gamekeeper"
+      ]
+    }
+  ]
+}

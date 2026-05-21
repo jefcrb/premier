@@ -1,0 +1,80 @@
+{
+  "Name": "GSL",
+  "ImageUri": "",
+  "SurMemberList": [
+    {
+      "Name": "Zeus",
+      "Camp": "Sur",
+      "Characters": [
+        "Enchantress",
+        "Forward",
+        "Archer"
+      ]
+    },
+    {
+      "Name": "Devil",
+      "Camp": "Sur",
+      "Characters": [
+        "Batter",
+        "Barmaid",
+        "Aeroplanist"
+      ]
+    },
+    {
+      "Name": "Haley",
+      "Camp": "Sur",
+      "Characters": [
+        "Doctor",
+        "Gardener",
+        "Perfumer"
+      ]
+    },
+    {
+      "Name": "Chris",
+      "Camp": "Sur",
+      "Characters": [
+        "Escapologist",
+        "Postman",
+        "Professor"
+      ]
+    },
+    {
+      "Name": "Sou",
+      "Camp": "Sur",
+      "Characters": [
+        "Mechanic",
+        "Cheerleader",
+        "Psychologist"
+      ]
+    },
+    {
+      "Name": "Dreamer",
+      "Camp": "Sur",
+      "Characters": [
+        "Wildling",
+        "Coordinator",
+        "Mercenary"
+      ]
+    }
+  ],
+  "HunMemberList": [
+    {
+      "Name": "Blucow",
+      "Camp": "Hun",
+      "Characters": [
+        "Clerk",
+        "Peddler",
+        "Dream Witch"
+      ]
+    },
+    {
+      "Name": "Yalda",
+      "Camp": "Hun",
+      "Characters": [
+        "Hermit",
+        "Queen Bee",
+        "Nightmare"
+      ]
+    }
+  ]
+}

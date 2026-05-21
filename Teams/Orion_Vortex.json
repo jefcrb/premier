@@ -1,0 +1,62 @@
+{
+  "Name": "Orion Vortex",
+  "ImageUri": "",
+  "SurMemberList": [
+    {
+      "Name": "Vanitas",
+      "Camp": "Sur",
+      "Characters": [
+        "Lanternist",
+        "Meteorologist",
+        "Toy Merchant"
+      ]
+    },
+    {
+      "Name": "Irizon",
+      "Camp": "Sur",
+      "Characters": [
+        "Mechanic",
+        "Journalist",
+        "Seer"
+      ]
+    },
+    {
+      "Name": "CX",
+      "Camp": "Sur",
+      "Characters": [
+        "Forward",
+        "Magician",
+        "Cowboy"
+      ]
+    },
+    {
+      "Name": "Angelo",
+      "Camp": "Sur",
+      "Characters": [
+        "Perfumer",
+        "Meteorologist",
+        "Journalist"
+      ]
+    },
+    {
+      "Name": "Luffy",
+      "Camp": "Sur",
+      "Characters": [
+        "Patient",
+        "Acrobat",
+        "Prospector"
+      ]
+    }
+  ],
+  "HunMemberList": [
+    {
+      "Name": "Fuyuhiko",
+      "Camp": "Hun",
+      "Characters": [
+        "Breaking Wheel",
+        "Ripper",
+        "Clerk"
+      ]
+    }
+  ]
+}

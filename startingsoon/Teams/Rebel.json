@@ -1,0 +1,80 @@
+{
+  "Name": "Rebel",
+  "ImageUri": "",
+  "SurMemberList": [
+    {
+      "Name": "Frappe",
+      "Camp": "Sur",
+      "Characters": [
+        "Postman",
+        "Embalmer",
+        "Female Dancer"
+      ]
+    },
+    {
+      "Name": "Memory",
+      "Camp": "Sur",
+      "Characters": [
+        "Cheerleader",
+        "Journalist",
+        "Meteorologist"
+      ]
+    },
+    {
+      "Name": "Justice",
+      "Camp": "Sur",
+      "Characters": [
+        "The Mind's Eye",
+        "Enchantress",
+        "Prisoner"
+      ]
+    },
+    {
+      "Name": "Mellow",
+      "Camp": "Sur",
+      "Characters": [
+        "Fire Investigator",
+        "Knight",
+        "Patient"
+      ]
+    },
+    {
+      "Name": "Angel",
+      "Camp": "Sur",
+      "Characters": [
+        "Lucky Guy",
+        "Female Dancer",
+        "Toy Merchant"
+      ]
+    },
+    {
+      "Name": "Sapphire",
+      "Camp": "Sur",
+      "Characters": [
+        "Gravekeeper",
+        "Coordinator",
+        "Archer"
+      ]
+    }
+  ],
+  "HunMemberList": [
+    {
+      "Name": "Aydin",
+      "Camp": "Hun",
+      "Characters": [
+        "Mad Eyes",
+        "Peddler",
+        "Undead"
+      ]
+    },
+    {
+      "Name": "Nobo",
+      "Camp": "Hun",
+      "Characters": [
+        "The Shadow",
+        "Feaster",
+        "Opera Singer"
+      ]
+    }
+  ]
+}

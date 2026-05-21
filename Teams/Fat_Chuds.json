@@ -1,0 +1,71 @@
+{
+  "Name": "Fat Chuds",
+  "ImageUri": "",
+  "SurMemberList": [
+    {
+      "Name": "Jun-3",
+      "Camp": "Sur",
+      "Characters": [
+        "Prisoner",
+        "Prospector",
+        "Weeping Clown"
+      ]
+    },
+    {
+      "Name": "Cass",
+      "Camp": "Sur",
+      "Characters": [
+        "Cheerleader",
+        "Mechanic",
+        "Seer"
+      ]
+    },
+    {
+      "Name": "Zee",
+      "Camp": "Sur",
+      "Characters": [
+        "Acrobat",
+        "Mercenary",
+        "Gravekeeper"
+      ]
+    },
+    {
+      "Name": "Carrot",
+      "Camp": "Sur",
+      "Characters": [
+        "Antiquarian",
+        "Gardener",
+        "Doctor"
+      ]
+    },
+    {
+      "Name": "Diana",
+      "Camp": "Sur",
+      "Characters": [
+        "Matador",
+        "Lanternist",
+        "Archer"
+      ]
+    }
+  ],
+  "HunMemberList": [
+    {
+      "Name": "Auggie",
+      "Camp": "Hun",
+      "Characters": [
+        "Bloody Queen",
+        "Naiad",
+        "Nightwatch"
+      ]
+    },
+    {
+      "Name": "Nocturain",
+      "Camp": "Hun",
+      "Characters": [
+        "The Shadow",
+        "Hullabaloo",
+        "Goatman"
+      ]
+    }
+  ]
+}

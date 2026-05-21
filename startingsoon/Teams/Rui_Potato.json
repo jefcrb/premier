@@ -1,0 +1,89 @@
+{
+  "Name": "Rui Potato",
+  "ImageUri": "",
+  "SurMemberList": [
+    {
+      "Name": "NoName",
+      "Camp": "Sur",
+      "Characters": [
+        "Gardener",
+        "Prospector",
+        "Postman"
+      ]
+    },
+    {
+      "Name": "JinJin",
+      "Camp": "Sur",
+      "Characters": [
+        "Enchantress",
+        "Perfumer",
+        "Archer"
+      ]
+    },
+    {
+      "Name": "Tommy",
+      "Camp": "Sur",
+      "Characters": [
+        "Gravekeeper",
+        "First Officer",
+        "Mercenary"
+      ]
+    },
+    {
+      "Name": "Huiyin",
+      "Camp": "Sur",
+      "Characters": [
+        "Cowboy",
+        "Mechanic",
+        "Cheerleader"
+      ]
+    },
+    {
+      "Name": "Xinami",
+      "Camp": "Sur",
+      "Characters": [
+        "Aeroplanist",
+        "Mercenary",
+        "Fire Investigator"
+      ]
+    },
+    {
+      "Name": "Rui",
+      "Camp": "Sur",
+      "Characters": [
+        "First Officer",
+        "Psychologist",
+        "Magician"
+      ]
+    },
+    {
+      "Name": "Owen",
+      "Camp": "Sur",
+      "Characters": [
+        "Doctor",
+        "Novelist",
+        "Prisoner"
+      ]
+    }
+  ],
+  "HunMemberList": [
+    {
+      "Name": "PinkFox",
+      "Camp": "Hun",
+      "Characters": [
+        "Guard 26",
+        "Sculptor",
+        "Disciple"
+      ]
+    },
+    {
+      "Name": "Neila",
+      "Camp": "Hun",
+      "Characters": [
+        "Naiad",
+        "Dream Witch",
+        "Queen Bee"
+      ]
+    }
+  ]
+}

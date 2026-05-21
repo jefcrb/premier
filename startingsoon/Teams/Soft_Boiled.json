@@ -1,0 +1,89 @@
+{
+  "Name": "Soft Boiled",
+  "ImageUri": "",
+  "SurMemberList": [
+    {
+      "Name": "Reko",
+      "Camp": "Sur",
+      "Characters": [
+        "Antiquarian",
+        "Coordinator",
+        "Enchantress"
+      ]
+    },
+    {
+      "Name": "Egg",
+      "Camp": "Sur",
+      "Characters": [
+        "Painter",
+        "Mechanic",
+        "Meteorologist"
+      ]
+    },
+    {
+      "Name": "Xiaoyuu",
+      "Camp": "Sur",
+      "Characters": [
+        "Puppeteer",
+        "Lanternist",
+        "Journalist"
+      ]
+    },
+    {
+      "Name": "Itsy",
+      "Camp": "Sur",
+      "Characters": [
+        "Prisoner",
+        "Mechanic",
+        "Explorer"
+      ]
+    },
+    {
+      "Name": "Jelly",
+      "Camp": "Sur",
+      "Characters": [
+        "Antiquarian",
+        "Lucky Guy",
+        "Perfumer"
+      ]
+    },
+    {
+      "Name": "Merchant",
+      "Camp": "Sur",
+      "Characters": [
+        "Lawyer",
+        "Escapologist",
+        "Embalmer"
+      ]
+    }
+  ],
+  "HunMemberList": [
+    {
+      "Name": "Wren",
+      "Camp": "Hun",
+      "Characters": [
+        "Naiad",
+        "Bloody Queen",
+        "Dream Witch"
+      ]
+    },
+    {
+      "Name": "Evan",
+      "Camp": "Hun",
+      "Characters": [
+        "Fool's Gold",
+        "Opera Singer",
+        "Queen Bee"
+      ]
+    },
+    {
+      "Name": "Hakurou",
+      "Camp": "Hun",
+      "Characters": [
+        "Mad Eyes",
+        "Hermit",
+        "Wu Chang"
+      ]
+    }
+  ]
+}

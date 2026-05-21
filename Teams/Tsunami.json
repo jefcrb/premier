@@ -1,0 +1,89 @@
+{
+  "Name": "Tsunami",
+  "ImageUri": "",
+  "SurMemberList": [
+    {
+      "Name": "Melody",
+      "Camp": "Sur",
+      "Characters": [
+        "Female Dancer",
+        "Antiquarian",
+        "Mechanic"
+      ]
+    },
+    {
+      "Name": "Jelly",
+      "Camp": "Sur",
+      "Characters": [
+        "Gardener",
+        "Priestess",
+        "Enchantress"
+      ]
+    },
+    {
+      "Name": "Angel",
+      "Camp": "Sur",
+      "Characters": [
+        "Cheerleader",
+        "Journalist",
+        "Antiquarian"
+      ]
+    },
+    {
+      "Name": "Eev",
+      "Camp": "Sur",
+      "Characters": [
+        "Cheerleader",
+        "Forward",
+        "Mechanic"
+      ]
+    },
+    {
+      "Name": "Alina",
+      "Camp": "Sur",
+      "Characters": [
+        "Antiquarian",
+        "Painter",
+        "Composer"
+      ]
+    },
+    {
+      "Name": "Atsu",
+      "Camp": "Sur",
+      "Characters": [
+        "Cheerleader",
+        "Entomologist",
+        "Toy Merchant"
+      ]
+    }
+  ],
+  "HunMemberList": [
+    {
+      "Name": "Clerico",
+      "Camp": "Hun",
+      "Characters": [
+        "Opera Singer",
+        "Cueist",
+        "Dream Witch"
+      ]
+    },
+    {
+      "Name": "Batfather",
+      "Camp": "Hun",
+      "Characters": [
+        "Photographer",
+        "Hermit",
+        "Violinist"
+      ]
+    },
+    {
+      "Name": "Vio",
+      "Camp": "Hun",
+      "Characters": [
+        "Violinist",
+        "Hermit",
+        "Bloody Queen"
+      ]
+    }
+  ]
+}

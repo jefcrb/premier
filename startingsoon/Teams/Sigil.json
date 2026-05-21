@@ -1,0 +1,60 @@
+{
+  "Name": "Sigil",
+  "ImageUri": null,
+  "SurMemberList": [
+    {
+      "Name": "Zinni",
+      "Camp": "Sur",
+      "Characters": [
+        "Lanternist",
+        "Antiquarian",
+        "Gravekeeper"
+      ]
+    },
+    {
+      "Name": "Carpet",
+      "Camp": "Sur",
+      "Characters": [
+        "Forward",
+        "Wildling",
+        "Batter"
+      ]
+    },
+    {
+      "Name": "oofcar",
+      "Camp": "Sur",
+      "Characters": [
+        "Archer",
+        "Seer",
+        "Forward"
+      ]
+    },
+    {
+      "Name": "Klaha",
+      "Camp": "Sur",
+      "Characters": [
+        "Lanternist",
+        "Prisoner",
+        "Seer"
+      ]
+    },
+    {
+      "Name": "Kazu",
+      "Camp": "Sur",
+      "Characters": [
+        "Psychologist",
+        "Puppeteer",
+        "Acrobat"
+      ]
+    }
+  ],
+  "HunMemberList": [
+    {
+      "Name": "Soul",
+      "Camp": "Hun",
+      "Characters": [
+        "Queen Bee"
+      ]
+    }
+  ]
+}
