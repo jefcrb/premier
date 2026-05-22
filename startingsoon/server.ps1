@@ -36,7 +36,11 @@ Write-Host "  Server is running on port $port" -ForegroundColor Green
 Write-Host ''
 Write-Host '  Paste this URL into your OBS Browser Source:' -ForegroundColor White
 Write-Host ''
-Write-Host "    http://localhost:$port/startingsoon.html?team1=GoLoko&team2=BEE" -ForegroundColor Yellow
+Write-Host "    http://localhost:$port/startingsoon.html" -ForegroundColor Yellow
+Write-Host ''
+Write-Host '  Open the control panel in your browser to pick teams:' -ForegroundColor White
+Write-Host ''
+Write-Host "    http://localhost:$port/control.html" -ForegroundColor Yellow
 Write-Host ''
 Write-Host '  To stop the server: close this window' -ForegroundColor Gray
 Write-Host ''
@@ -66,13 +70,81 @@ $mime = @{
 
 $rootFull = [System.IO.Path]::GetFullPath($root)
 
+$stateFile = Join-Path $root '.state.json'
+$state = @{ team1 = ''; team2 = '' }
+if (Test-Path -LiteralPath $stateFile) {
+  try {
+    $loaded = Get-Content -LiteralPath $stateFile -Raw | ConvertFrom-Json
+    if ($loaded.team1) { $state.team1 = [string]$loaded.team1 }
+    if ($loaded.team2) { $state.team2 = [string]$loaded.team2 }
+  } catch {}
+}
+
+function Save-State($s) {
+  try {
+    ($s | ConvertTo-Json) | Set-Content -LiteralPath $stateFile -Encoding utf8
+  } catch {}
+}
+
+function Write-Json($res, $obj, [int]$status = 200) {
+  $json = ConvertTo-Json -InputObject $obj -Compress -Depth 10
+  $bytes = [System.Text.Encoding]::UTF8.GetBytes($json)
+  $res.StatusCode = $status
+  $res.ContentType = 'application/json; charset=utf-8'
+  $res.ContentLength64 = $bytes.Length
+  $res.Headers.Add('Cache-Control', 'no-store')
+  $res.OutputStream.Write($bytes, 0, $bytes.Length)
+}
+
 try {
   while ($listener.IsListening) {
     $ctx = $listener.GetContext()
     $req = $ctx.Request
     $res = $ctx.Response
     try {
-      $rel = [Uri]::UnescapeDataString($req.Url.AbsolutePath.TrimStart('/'))
+      $absPath = $req.Url.AbsolutePath
+
+      if ($absPath -eq '/state') {
+        if ($req.HttpMethod -eq 'GET') {
+          Write-Json $res $state
+        } elseif ($req.HttpMethod -eq 'POST') {
+          $reader = New-Object System.IO.StreamReader($req.InputStream, $req.ContentEncoding)
+          $body = $reader.ReadToEnd()
+          $reader.Close()
+          try {
+            $parsed = $body | ConvertFrom-Json
+            if ($null -ne $parsed.team1) { $state.team1 = [string]$parsed.team1 }
+            if ($null -ne $parsed.team2) { $state.team2 = [string]$parsed.team2 }
+            Save-State $state
+            Write-Json $res $state
+            Write-Host ("  SET  team1=$($state.team1)  team2=$($state.team2)") -ForegroundColor Cyan
+          } catch {
+            Write-Json $res @{ error = 'invalid json' } 400
+          }
+        } else {
+          $res.StatusCode = 405
+        }
+        continue
+      }
+
+      if ($absPath -eq '/teams' -and $req.HttpMethod -eq 'GET') {
+        $teamsDir = Join-Path $root 'Teams'
+        $names = @()
+        if (Test-Path -LiteralPath $teamsDir) {
+          $files = Get-ChildItem -LiteralPath $teamsDir -Filter '*.json' -File
+          foreach ($f in $files) {
+            try {
+              $obj = Get-Content -LiteralPath $f.FullName -Raw | ConvertFrom-Json
+              if ($obj.Name) { $names += [string]$obj.Name }
+            } catch {}
+          }
+          $names = $names | Sort-Object
+        }
+        Write-Json $res $names
+        continue
+      }
+
+      $rel = [Uri]::UnescapeDataString($absPath.TrimStart('/'))
       if ([string]::IsNullOrEmpty($rel) -or $rel.EndsWith('/')) {
         $rel = (Join-Path $rel 'startingsoon.html')
       }

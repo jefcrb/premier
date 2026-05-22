@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Starting Soon — Control Panel</title>
+<style>
+  :root { color-scheme: dark; }
+  body {
+    font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+    background: #15151b;
+    color: #e8e8ec;
+    margin: 0;
+    padding: 48px 32px;
+  }
+  h1 {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #8a8a98;
+    margin: 0 0 28px;
+  }
+  .row { display: flex; gap: 20px; max-width: 720px; align-items: flex-end; }
+  .field { flex: 1; }
+  label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 8px;
+  }
+  select, button {
+    font: inherit;
+    font-size: 15px;
+    padding: 10px 12px;
+    background: #23232c;
+    color: #fff;
+    border: 1px solid #34343f;
+    border-radius: 4px;
+  }
+  select { width: 100%; }
+  select:focus, button:focus { outline: 2px solid #6a6acc; outline-offset: 1px; }
+  button { cursor: pointer; }
+  button:hover { background: #2e2e38; }
+  .vs {
+    align-self: center;
+    margin-bottom: 11px;
+    font-weight: 700;
+    color: #555;
+    letter-spacing: 2px;
+  }
+  .actions { margin-top: 18px; display: flex; gap: 10px; max-width: 720px; }
+  .status {
+    margin-top: 28px;
+    font-size: 13px;
+    color: #6a6a7a;
+    max-width: 720px;
+  }
+  .status b { color: #e8e8ec; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<h1>Starting Soon — Control Panel</h1>
+
+<div class="row">
+  <div class="field">
+    <label>Team 1 (left)</label>
+    <select id="team1"></select>
+  </div>
+  <div class="vs">VS</div>
+  <div class="field">
+    <label>Team 2 (right)</label>
+    <select id="team2"></select>
+  </div>
+</div>
+
+<div class="actions">
+  <button id="swap">Swap sides</button>
+  <button id="clear">Clear</button>
+</div>
+
+<div class="status" id="status">Loading teams…</div>
+
+<script>
+const $1 = document.getElementById('team1');
+const $2 = document.getElementById('team2');
+const $status = document.getElementById('status');
+const $swap = document.getElementById('swap');
+const $clear = document.getElementById('clear');
+
+async function loadTeams() {
+  const r = await fetch('/teams', { cache: 'no-store' });
+  return r.json();
+}
+async function getState() {
+  const r = await fetch('/state', { cache: 'no-store' });
+  return r.json();
+}
+async function setState(team1, team2) {
+  await fetch('/state', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ team1, team2 })
+  });
+  render(team1, team2);
+}
+
+function render(t1, t2) {
+  if (t1 && t2) {
+    $status.innerHTML = `Showing <b>${escapeHtml(t1)}</b> vs <b>${escapeHtml(t2)}</b>. The overlay updates automatically.`;
+  } else {
+    $status.textContent = 'Pick two teams to start the overlay.';
+  }
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function fill(sel, teams, current) {
+  sel.innerHTML = '';
+  const empty = document.createElement('option');
+  empty.value = '';
+  empty.textContent = '— none —';
+  sel.appendChild(empty);
+  for (const t of teams) {
+    const o = document.createElement('option');
+    o.value = t;
+    o.textContent = t;
+    if (t === current) o.selected = true;
+    sel.appendChild(o);
+  }
+}
+
+(async () => {
+  const [teams, state] = await Promise.all([loadTeams(), getState()]);
+  fill($1, teams, state.team1);
+  fill($2, teams, state.team2);
+  render(state.team1, state.team2);
+
+  const onChange = () => setState($1.value, $2.value);
+  $1.addEventListener('change', onChange);
+  $2.addEventListener('change', onChange);
+
+  $swap.addEventListener('click', () => {
+    const a = $1.value, b = $2.value;
+    $1.value = b; $2.value = a;
+    setState($1.value, $2.value);
+  });
+
+  $clear.addEventListener('click', () => {
+    $1.value = ''; $2.value = '';
+    setState('', '');
+  });
+})();
+</script>
+
+</body>
+</html>

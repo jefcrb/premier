@@ -70,7 +70,7 @@
 body {
   width: 1920px;
   height: 1080px;
-  background: var(--bg);
+  background: var(--bg) url('assets/background.png') center center / cover no-repeat;
   overflow: hidden;
   font-family: 'GcArbiter', 'Segoe UI', Arial, sans-serif;
   color: var(--ink);
@@ -148,7 +148,7 @@ body::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('assets/backdrop.png');
+  background-image: url('assets/backdrop2.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   z-index: 1;
@@ -322,7 +322,49 @@ body::before {
   min-width: 0;
 }
 
+.logo-wrap {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -30px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.18) 35%, transparent 70%);
+  filter: blur(18px);
+  z-index: 0;
+  animation: logo-breath 4.2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.team-block:nth-child(1) .logo-wrap::before {
+  background: radial-gradient(circle, rgba(226, 111, 168, 0.65) 0%, rgba(196, 74, 140, 0.25) 40%, transparent 72%);
+}
+.team-block:nth-child(3) .logo-wrap::before {
+  background: radial-gradient(circle, rgba(91, 212, 216, 0.65) 0%, rgba(90, 143, 227, 0.25) 40%, transparent 72%);
+  animation-delay: -2.1s;
+}
+
+@keyframes logo-breath {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scale(0.92);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
 .logo-img {
+  position: relative;
+  z-index: 1;
   width: 140px;
   height: 140px;
   object-fit: contain;
@@ -330,6 +372,8 @@ body::before {
 }
 
 .logo-missing {
+  position: relative;
+  z-index: 1;
   width: 140px;
   height: 140px;
   border: 2px dashed rgba(255, 255, 255, 0.25);
@@ -622,97 +666,130 @@ function pickChar(player) {
 loadTeams().then(loaded => {
   TEAMS = loaded;
 
-  const params = new URLSearchParams(location.search);
-  const team1 = findTeam(params.get("team1"));
-  const team2 = findTeam(params.get("team2"));
+  const INTERVAL = 10000;
+  const POLL_INTERVAL = 1500;
 
-  if (!team1 || !team2) {
-  document.body.style.cssText = "display:flex;align-items:center;justify-content:center;background:#E8DDEE;color:#1B1C3E;font-family:'GcArbiter',sans-serif;width:100vw;height:100vh;flex-direction:column;gap:16px";
-  document.body.innerHTML = `
-    <div style="font-size:28px;letter-spacing:6px;color:#2B2C5E;font-weight:700">TEAMS NOT FOUND</div>
-    <div style="font-size:14px;color:#3D3F7A;letter-spacing:3px">Use: ?team1=GoLoko&amp;team2=BEE</div>
-    <div style="font-size:12px;color:#3D3F7A;max-width:800px;text-align:center;line-height:2;letter-spacing:1px">
-      Available: ${TEAMS.map(t => t.Name).join(" &bull; ")}
-    </div>`;
-} else {
-  document.getElementById("c-name1").textContent = team1.Name;
-  document.getElementById("c-name2").textContent = team2.Name;
+  const scene = document.querySelector(".scene");
+  const navy  = document.querySelector(".navy-band");
+  const leftSide   = document.getElementById("left-side");
+  const rightSide  = document.getElementById("right-side");
+  const leftImg    = document.getElementById("left-img");
+  const rightImg   = document.getElementById("right-img");
+  const leftStage  = leftSide.querySelector(".char-stage");
+  const rightStage = rightSide.querySelector(".char-stage");
+  const leftPlayer = document.getElementById("left-player");
+  const rightPlayer= document.getElementById("right-player");
 
-  const logo1 = getLogoPath(team1.Name);
-  const logo2 = getLogoPath(team2.Name);
+  let team1 = null, team2 = null;
+  let currentKey = "";
+  let round = [];
+  let idx = 0;
+  let cycleTimer = null;
 
-  function makeLogo(path, wrap) {
+  function setVisible(on) {
+    scene.style.visibility = on ? "" : "hidden";
+    navy.style.visibility  = on ? "" : "hidden";
+  }
+  setVisible(false);
+
+  function setLogo(wrap, path) {
+    wrap.innerHTML = "";
+    const inner = document.createElement("div");
+    inner.className = "logo-wrap";
     if (path) {
       const img = document.createElement("img");
       img.className = "logo-img";
       img.src = path;
-      wrap.appendChild(img);
+      inner.appendChild(img);
     } else {
       const div = document.createElement("div");
       div.className = "logo-missing";
-      wrap.appendChild(div);
+      inner.appendChild(div);
     }
+    wrap.appendChild(inner);
   }
-  makeLogo(logo1, document.getElementById("logo1-wrap"));
-  makeLogo(logo2, document.getElementById("logo2-wrap"));
 
-  let round = buildRound(team1, team2);
-  if (!round.length) {
-    document.getElementById("left-player").textContent = "No matching camp";
-  } else {
-    let idx = 0;
-    const INTERVAL = 10000;
+  function applyPair(pair) {
+    const c1 = pickChar(pair.p1);
+    const c2 = pickChar(pair.p2);
+    const img1 = getCharImage(c1);
+    const img2 = getCharImage(c2);
 
-    const leftSide   = document.getElementById("left-side");
-    const rightSide  = document.getElementById("right-side");
-    const leftImg    = document.getElementById("left-img");
-    const rightImg   = document.getElementById("right-img");
-    const leftStage  = leftSide.querySelector(".char-stage");
-    const rightStage = rightSide.querySelector(".char-stage");
-    const leftPlayer = document.getElementById("left-player");
-    const rightPlayer= document.getElementById("right-player");
+    leftSide.classList.remove("sur", "hun");
+    rightSide.classList.remove("sur", "hun");
+    leftSide.classList.add(pair.camp);
+    rightSide.classList.add(pair.camp);
 
-    function applyPair(pair) {
-      const c1 = pickChar(pair.p1);
-      const c2 = pickChar(pair.p2);
-      const img1 = getCharImage(c1);
-      const img2 = getCharImage(c2);
+    leftPlayer.textContent  = pair.p1.Name;
+    rightPlayer.textContent = pair.p2.Name;
 
-      leftSide.classList.remove("sur", "hun");
-      rightSide.classList.remove("sur", "hun");
-      leftSide.classList.add(pair.camp);
-      rightSide.classList.add(pair.camp);
-
-      leftPlayer.textContent  = pair.p1.Name;
-      rightPlayer.textContent = pair.p2.Name;
-
-      if (img1) leftImg.src  = img1;
-      if (img2) rightImg.src = img2;
-    }
-
-    function next() {
-      leftStage.classList.add("slid-out");
-      rightStage.classList.add("slid-out");
-      leftPlayer.classList.add("fade");
-      rightPlayer.classList.add("fade");
-      setTimeout(() => {
-        idx++;
-        if (idx >= round.length) {
-          round = buildRound(team1, team2);
-          idx = 0;
-        }
-        applyPair(round[idx]);
-        leftStage.classList.remove("slid-out");
-        rightStage.classList.remove("slid-out");
-        leftPlayer.classList.remove("fade");
-        rightPlayer.classList.remove("fade");
-      }, 550);
-    }
-
-    applyPair(round[0]);
-    setInterval(next, INTERVAL);
+    if (img1) leftImg.src  = img1;
+    if (img2) rightImg.src = img2;
   }
+
+  function next() {
+    leftStage.classList.add("slid-out");
+    rightStage.classList.add("slid-out");
+    leftPlayer.classList.add("fade");
+    rightPlayer.classList.add("fade");
+    setTimeout(() => {
+      idx++;
+      if (idx >= round.length) {
+        round = buildRound(team1, team2);
+        idx = 0;
+      }
+      if (round.length) applyPair(round[idx]);
+      leftStage.classList.remove("slid-out");
+      rightStage.classList.remove("slid-out");
+      leftPlayer.classList.remove("fade");
+      rightPlayer.classList.remove("fade");
+    }, 550);
   }
+
+  function applyTeams(t1, t2) {
+    team1 = t1;
+    team2 = t2;
+
+    document.getElementById("c-name1").textContent = t1.Name;
+    document.getElementById("c-name2").textContent = t2.Name;
+    setLogo(document.getElementById("logo1-wrap"), getLogoPath(t1.Name));
+    setLogo(document.getElementById("logo2-wrap"), getLogoPath(t2.Name));
+
+    round = buildRound(t1, t2);
+    idx = 0;
+    if (round.length) applyPair(round[0]);
+    else leftPlayer.textContent = "No matching camp";
+
+    if (cycleTimer) clearInterval(cycleTimer);
+    if (round.length) cycleTimer = setInterval(next, INTERVAL);
+
+    setVisible(true);
+  }
+
+  function clearTeams() {
+    if (cycleTimer) { clearInterval(cycleTimer); cycleTimer = null; }
+    team1 = team2 = null;
+    round = [];
+    setVisible(false);
+  }
+
+  async function pollState() {
+    try {
+      const r = await fetch("/state", { cache: "no-store" });
+      if (!r.ok) return;
+      const s = await r.json();
+      const key = (s.team1 || "") + "\0" + (s.team2 || "");
+      if (key === currentKey) return;
+      currentKey = key;
+      const t1 = findTeam(s.team1);
+      const t2 = findTeam(s.team2);
+      if (t1 && t2) applyTeams(t1, t2);
+      else clearTeams();
+    } catch {}
+  }
+
+  pollState();
+  setInterval(pollState, POLL_INTERVAL);
 });
 </script>
 </body>
