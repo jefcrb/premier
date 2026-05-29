@@ -44,25 +44,29 @@
   src: url('Da%20font%20used/GcArbiterDemoExtraBold-PVYwZ.ttf') format('truetype');
   font-weight: 800;
 }
+@font-face {
+  font-family: 'Cat Paw';
+  src: local('Cat Paw'), url('assets/CatPaw-zr0OG.otf') format('truetype');
+}
 
 :root {
-  --bg: #E8DDEE;
-  --bg-soft: #F0E6F4;
-  --navy: #2B2C5E;
-  --navy-soft: #3D3F7A;
-  --ink: #1B1C3E;
+  --bg: #F5E9C8;
+  --bg-soft: #FBF3D8;
+  --navy: #0d0d0d;
+  --navy-soft: #5C4218;
+  --ink: #2E1F08;
 
-  --sur-1: #3A4D9C;
-  --sur-2: #5A8FE3;
-  --sur-3: #5BD4D8;
-  --sur-4: #8B7BD8;
-  --sur-5: #C29AE3;
+  --sur-1: #8B6B1F;
+  --sur-2: #C9962A;
+  --sur-3: #F0C84A;
+  --sur-4: #D8B05A;
+  --sur-5: #ECD590;
 
-  --hun-1: #9B3F8E;
-  --hun-2: #C44A8C;
-  --hun-3: #E26FA8;
-  --hun-4: #F091B5;
-  --hun-5: #F5B0CC;
+  --hun-1: #A8501A;
+  --hun-2: #D67025;
+  --hun-3: #EE9645;
+  --hun-4: #F4B470;
+  --hun-5: #F8CFA0;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -70,7 +74,7 @@
 body {
   width: 1920px;
   height: 1080px;
-  background: var(--bg) url('assets/background.png') center center / cover no-repeat;
+  background: var(--bg) url('assets/background3.png') center center / cover no-repeat;
   overflow: hidden;
   font-family: 'GcArbiter', 'Segoe UI', Arial, sans-serif;
   color: var(--ink);
@@ -82,10 +86,25 @@ body::before {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 18% 55%, rgba(155, 63, 142, 0.12) 0%, transparent 45%),
-    radial-gradient(ellipse at 82% 55%, rgba(58, 77, 156, 0.12) 0%, transparent 45%);
+    radial-gradient(ellipse at 18% 55%, rgba(214, 112, 37, 0.14) 0%, transparent 45%),
+    radial-gradient(ellipse at 82% 55%, rgba(201, 150, 42, 0.14) 0%, transparent 45%);
   pointer-events: none;
   z-index: 1;
+}
+
+body::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('assets/elgato.png') center center / contain no-repeat;
+  pointer-events: none;
+  z-index: 1;
+  animation: elgato-breath 40s ease-in-out infinite;
+}
+
+@keyframes elgato-breath {
+  0%, 100% { opacity: 0.0; }
+  80%      { opacity: 0.4; }
 }
 
 .navy-band {
@@ -93,7 +112,7 @@ body::before {
   left: 0; right: 0;
   top: 56%;
   height: 110px;
-  background: var(--navy);
+  background: #2e0e04;
   z-index: 2;
 }
 
@@ -103,7 +122,7 @@ body::before {
   left: 0; right: 0;
   top: 100%;
   height: 80px;
-  background: rgba(155, 158, 200, 0.45);
+  background: rgba(53, 0, 40, 0.45);
 }
 
 .scene {
@@ -148,7 +167,7 @@ body::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('assets/backdrop.png');
+  background-image: url('assets/backdrop4.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   z-index: 1;
@@ -228,8 +247,8 @@ body::before {
   align-items: center;
   gap: 44px;
   padding: 24px 52px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(0, 0, 0, 0.28);
+  border-top: 1px solid rgba(240, 180, 200, 0.15);
+  background: rgba(40, 14, 26, 0.35);
 }
 
 .player-slot {
@@ -247,8 +266,8 @@ body::before {
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
 }
 
-.player-slot.left  { color: var(--hun-3); }
-.player-slot.right { color: var(--sur-3); }
+.player-slot.left  { color: #F0D596; }
+.player-slot.right { color: #E6DDA6; }
 
 .vs-spacer {
   visibility: hidden;
@@ -259,6 +278,15 @@ body::before {
   flex-shrink: 0;
 }
 .vs-spacer::before { content: "VS"; }
+
+.vs-catpaw {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  transform: rotate(45deg);
+  filter: drop-shadow(0 2px 8px rgba(40, 10, 24, 0.55));
+}
 
 .char-name-label {
   font-size: 18px;
@@ -284,10 +312,11 @@ body::before {
 }
 
 .starting-label {
+  font-family:'Cat Paw', Courier, monospace;
   display: flex;
   align-items: center;
   gap: 22px;
-  font-size: 30px;
+  font-size: 54px;
   letter-spacing: 14px;
   color: var(--navy);
   text-transform: uppercase;
@@ -304,8 +333,13 @@ body::before {
 .logos-vs {
   display: flex;
   flex-direction: column;
-  background: rgba(27, 28, 62, 0.82);
-  border: 1px solid rgba(43, 44, 94, 0.6);
+  background:
+    linear-gradient(160deg, rgba(180, 70, 100, 0.18) 0%, rgba(60, 22, 36, 0) 55%),
+    rgba(70, 26, 42, 0.86);
+  border: 1px solid rgba(214, 110, 140, 0.45);
+  box-shadow:
+    0 8px 30px rgba(40, 10, 24, 0.45),
+    inset 0 1px 0 rgba(240, 180, 200, 0.12);
   border-radius: 4px;
   backdrop-filter: blur(8px);
   overflow: hidden;
@@ -344,11 +378,11 @@ body::before {
 }
 
 .team-block:nth-child(1) .logo-wrap::before {
-  background: radial-gradient(circle, rgba(226, 111, 168, 0.65) 0%, rgba(196, 74, 140, 0.25) 40%, transparent 72%);
+  background: radial-gradient(circle, rgba(245, 215, 150, 0.75) 0%, rgba(216, 176, 90, 0.28) 10%, transparent 72%);
 }
 .team-block:nth-child(3) .logo-wrap::before {
-  background: radial-gradient(circle, rgba(91, 212, 216, 0.65) 0%, rgba(90, 143, 227, 0.25) 40%, transparent 72%);
-  animation-delay: -2.1s;
+  background: radial-gradient(circle, rgba(236, 224, 170, 0.75) 0%, rgba(190, 200, 140, 0.28) 10%, transparent 72%);
+  animation-delay: -7s;
 }
 
 @keyframes logo-breath {
@@ -399,8 +433,8 @@ body::before {
   text-align: center;
 }
 
-.center-team-name.left { color: var(--hun-3); }
-.center-team-name.right { color: var(--sur-3); }
+.center-team-name.left { color: #F0D596; }
+.center-team-name.right { color: #E6DDA6; }
 
 .tag-row {
   display: flex;
@@ -423,6 +457,48 @@ body::before {
 }
 .tag-row .pip.blue { background: var(--sur-3); }
 
+.cycle-timer {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  width: 64px;
+  height: 64px;
+  z-index: 20;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
+}
+
+.cycle-timer svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.cycle-timer .track {
+  fill: none;
+  stroke: rgba(46, 31, 8, 0.18);
+  stroke-width: 4;
+}
+
+.cycle-timer .progress {
+  fill: none;
+  stroke: var(--sur-3);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 163.36;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+}
+
+.cycle-timer.run .progress {
+  animation: timer-unwind var(--cycle-duration, 10s) linear forwards;
+}
+
+@keyframes timer-unwind {
+  from { stroke-dashoffset: 0; }
+  to   { stroke-dashoffset: -163.36; }
+}
+
 </style>
 </head>
 <body>
@@ -432,7 +508,7 @@ body::before {
     <div class="char-stage">
       <img class="char-img" id="left-img" src="" alt="">
     </div>
-    <div class="welcome-tag"><span class="stars">&#9670;&#9670;&#9670;</span><span>Premier Tournament</span></div>
+    <div class="welcome-tag"><span class="stars">&#9670;&#9670;&#9670;</span><span>IDV Community Tournament</span></div>
   </div>
 
   <div class="center">
@@ -451,7 +527,7 @@ body::before {
       </div>
       <div class="logos-vs-sub">
         <div class="player-slot left" id="left-player"></div>
-        <div class="vs-spacer"></div>
+        <img class="vs-catpaw" src="assets/catpaw.png" alt="">
         <div class="player-slot right" id="right-player"></div>
       </div>
     </div>
@@ -465,6 +541,13 @@ body::before {
       <img class="char-img" id="right-img" src="" alt="">
     </div>
   </div>
+</div>
+
+<div class="cycle-timer" id="cycle-timer">
+  <svg viewBox="0 0 60 60">
+    <circle class="track"    cx="30" cy="30" r="26"></circle>
+    <circle class="progress" cx="30" cy="30" r="26"></circle>
+  </svg>
 </div>
 
 <script>
@@ -666,7 +749,7 @@ function pickChar(player) {
 loadTeams().then(loaded => {
   TEAMS = loaded;
 
-  const INTERVAL = 10000;
+  const INTERVAL = 17700;
   const POLL_INTERVAL = 1500;
 
   const scene = document.querySelector(".scene");
@@ -679,6 +762,18 @@ loadTeams().then(loaded => {
   const rightStage = rightSide.querySelector(".char-stage");
   const leftPlayer = document.getElementById("left-player");
   const rightPlayer= document.getElementById("right-player");
+  const cycleTimerEl = document.getElementById("cycle-timer");
+
+  cycleTimerEl.style.setProperty("--cycle-duration", (INTERVAL / 1000) + "s");
+
+  function restartTimer() {
+    cycleTimerEl.classList.remove("run");
+    void cycleTimerEl.offsetWidth;
+    cycleTimerEl.classList.add("run");
+  }
+  function stopTimer() {
+    cycleTimerEl.classList.remove("run");
+  }
 
   let team1 = null, team2 = null;
   let currentKey = "";
@@ -689,23 +784,20 @@ loadTeams().then(loaded => {
   function setVisible(on) {
     scene.style.visibility = on ? "" : "hidden";
     navy.style.visibility  = on ? "" : "hidden";
+    cycleTimerEl.style.visibility = on ? "" : "hidden";
   }
   setVisible(false);
 
   function setLogo(wrap, path) {
     wrap.innerHTML = "";
+    if (!path) return;
     const inner = document.createElement("div");
     inner.className = "logo-wrap";
-    if (path) {
-      const img = document.createElement("img");
-      img.className = "logo-img";
-      img.src = path;
-      inner.appendChild(img);
-    } else {
-      const div = document.createElement("div");
-      div.className = "logo-missing";
-      inner.appendChild(div);
-    }
+    const img = document.createElement("img");
+    img.className = "logo-img";
+    img.onerror = () => { wrap.innerHTML = ""; };
+    img.src = path;
+    inner.appendChild(img);
     wrap.appendChild(inner);
   }
 
@@ -744,6 +836,7 @@ loadTeams().then(loaded => {
       leftPlayer.classList.remove("fade");
       rightPlayer.classList.remove("fade");
     }, 550);
+    restartTimer();
   }
 
   function applyTeams(t1, t2) {
@@ -764,6 +857,7 @@ loadTeams().then(loaded => {
     if (round.length) cycleTimer = setInterval(next, INTERVAL);
 
     setVisible(true);
+    if (round.length) restartTimer(); else stopTimer();
   }
 
   function clearTeams() {
@@ -771,6 +865,7 @@ loadTeams().then(loaded => {
     team1 = team2 = null;
     round = [];
     setVisible(false);
+    stopTimer();
   }
 
   async function pollState() {
